@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 
 	"github.com/vai195/gogmuclassdb/cmd/api"
@@ -10,7 +9,7 @@ import (
 )
 
 func main() {
-	fmt.Println(config.Envs.MongoLink)
+
 	mongoClient, err := db.ConnectToMongo(config.Envs.MongoLink)
 
 	if err != nil {

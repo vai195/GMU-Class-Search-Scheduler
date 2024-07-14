@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  gmu-db-go:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gmu-db-go
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    environment:
+      MONGO_URI: <Mongodb URI>

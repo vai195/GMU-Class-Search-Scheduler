@@ -6,7 +6,7 @@ import { Github, Search } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className='flex flex-col min-h-screen items-center justify-center gap-5'>
+    <div className='flex flex-col items-center justify-center gap-5 mt-5'>
       <div className='flex flex-col items-center gap-4 text-center'>
         <Image src={logo} alt='GMU H Logo' width={300} height={300} />
         <span className='font-extrabold tracking-tight text-2xl lg:text-4xl'>
@@ -28,6 +28,6 @@ export default function Home() {
       <Link href='https://github.com/vai195/GMU-Class-Search-Scheduler'>
         <Github />
       </Link>
-    </main>
+    </div>
   );
 }

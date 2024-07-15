@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../public/GeorgeMasonUniversity4koCV.png";
 import { Button } from "@/components/ui/button";
-import { Book, Hash, Search } from "lucide-react";
+import { Book, Hash, Mail, Search } from "lucide-react";
 
 function Navbar() {
   return (
@@ -25,6 +25,11 @@ function Navbar() {
           <Button asChild className='gap-1'>
             <Link href='/subjectcourse'>
               <Book /> Subject Course Search
+            </Link>
+          </Button>
+          <Button asChild className='gap-1'>
+            <Link href='/contact'>
+              <Mail /> Contact Me
             </Link>
           </Button>
         </div>{" "}

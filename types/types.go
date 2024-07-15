@@ -10,40 +10,40 @@ type Store interface {
 }
 
 type Class struct {
-	Id                 int               `bson:"id,omitempty"`
-	Term               string            `bson:"term,omitempty"`
-	TermDesc           string            `bson:"termDesc,omitempty"`
-	CourseRN           string            `bson:"courseReferenceNumber,omitempty"`
-	CourseNumber       string            `bson:"courseNumber,omitempty"`
-	Subject            string            `bson:"subject,omitempty"`
-	SubjectDescription string            `bson:"subjectDescription,omitempty"`
-	SequenceNumber     string            `bson:"sequenceNumber,omitempty"`
-	ScheduleType       string            `bson:"scheduleTypeDescription,omitempty"`
-	CourseTitle        string            `bson:"courseTitle,omitempty"`
-	SubjectCourse      string            `bson:"subjectCourse,omitempty"`
-	Facultys           []Faculty         `bson:"faculty,omitempty"`
-	MeetingsFacultys   []MeetingsFaculty `bson:"meetingsFaculty,omitempty"`
+	Id                 int               `json:"id,omitempty" bson:"id,omitempty"`
+	Term               string            `json:"term,omitempty" bson:"term,omitempty"`
+	TermDesc           string            `json:"termDesc,omitempty" bson:"termDesc,omitempty"`
+	CourseRN           string            `json:"courseReferenceNumber,omitempty" bson:"courseReferenceNumber,omitempty"`
+	CourseNumber       string            `json:"courseNumber,omitempty" bson:"courseNumber,omitempty"`
+	Subject            string            `json:"subject,omitempty" bson:"subject,omitempty"`
+	SubjectDescription string            `json:"subjectDescription,omitempty" bson:"subjectDescription,omitempty"`
+	SequenceNumber     string            `json:"sequenceNumber,omitempty" bson:"sequenceNumber,omitempty"`
+	ScheduleType       string            `json:"scheduleTypeDescription,omitempty" bson:"scheduleTypeDescription,omitempty"`
+	CourseTitle        string            `json:"courseTitle,omitempty" bson:"courseTitle,omitempty"`
+	SubjectCourse      string            `json:"subjectCourse,omitempty" bson:"subjectCourse,omitempty"`
+	Facultys           []Faculty         `json:"faculty,omitempty" bson:"faculty,omitempty"`
+	MeetingsFacultys   []MeetingsFaculty `json:"meetingsFaculty,omitempty" bson:"meetingsFaculty,omitempty"`
 }
 
 type Faculty struct {
-	DisplayName  string `bson:"displayName,omitempty"`
-	EmailAddress string `bson:"emailAddress,omitempty"`
+	DisplayName  string `json:"displayName,omitempty" bson:"displayName,omitempty"`
+	EmailAddress string `json:"emailAddress,omitempty" bson:"emailAddress,omitempty"`
 }
 
 type MeetingsFaculty struct {
-	MeetingTimeO MeetingTime `bson:"meetingTime,omitempty"`
+	MeetingTimeO MeetingTime `json:"meetingTime,omitempty" bson:"meetingTime,omitempty"`
 }
 
 type MeetingTime struct {
-	BeginTime           string `bson:"beginTime,omitempty"`
-	BuildingDescription string `bson:"buildingDescription,omitempty"`
-	Room                string `bson:"room,omitempty"`
-	EndTime             string `bson:"endTime,omitempty"`
-	Monday              bool   `bson:"monday,omitempty"`
-	Tuesday             bool   `bson:"tuesday,omitempty"`
-	Wednesday           bool   `bson:"wednesday,omitempty"`
-	Thursday            bool   `bson:"thursday,omitempty"`
-	Friday              bool   `bson:"friday,omitempty"`
-	Saturday            bool   `bson:"saturday,omitempty"`
-	Sunday              bool   `bson:"sunday,omitempty"`
+	BeginTime           string `json:"beginTime,omitempty" bson:"beginTime,omitempty"`
+	BuildingDescription string `json:"buildingDescription,omitempty" bson:"buildingDescription,omitempty"`
+	Room                string `json:"room,omitempty" bson:"room,omitempty"`
+	EndTime             string `json:"endTime,omitempty" bson:"endTime,omitempty"`
+	Monday              bool   `json:"monday,omitempty" bson:"monday,omitempty"`
+	Tuesday             bool   `json:"tuesday,omitempty" bson:"tuesday,omitempty"`
+	Wednesday           bool   `json:"wednesday,omitempty" bson:"wednesday,omitempty"`
+	Thursday            bool   `json:"thursday,omitempty" bson:"thursday,omitempty"`
+	Friday              bool   `json:"friday,omitempty" bson:"friday,omitempty"`
+	Saturday            bool   `json:"saturday,omitempty" bson:"saturday,omitempty"`
+	Sunday              bool   `json:"sunday,omitempty" bson:"sunday,omitempty"`
 }

@@ -21,7 +21,7 @@ type Class struct {
 	ScheduleType       string            `json:"scheduleTypeDescription,omitempty" bson:"scheduleTypeDescription,omitempty"`
 	CourseTitle        string            `json:"courseTitle,omitempty" bson:"courseTitle,omitempty"`
 	SubjectCourse      string            `json:"subjectCourse,omitempty" bson:"subjectCourse,omitempty"`
-	Facultys           []Faculty         `json:"faculty,omitempty" bson:"faculty,omitempty"`
+	Facultys           []Faculty         `json:"faculty" bson:"faculty"`
 	MeetingsFacultys   []MeetingsFaculty `json:"meetingsFaculty,omitempty" bson:"meetingsFaculty,omitempty"`
 }
 
@@ -39,11 +39,11 @@ type MeetingTime struct {
 	BuildingDescription string `json:"buildingDescription,omitempty" bson:"buildingDescription,omitempty"`
 	Room                string `json:"room,omitempty" bson:"room,omitempty"`
 	EndTime             string `json:"endTime,omitempty" bson:"endTime,omitempty"`
-	Monday              bool   `json:"monday,omitempty" bson:"monday,omitempty"`
-	Tuesday             bool   `json:"tuesday,omitempty" bson:"tuesday,omitempty"`
-	Wednesday           bool   `json:"wednesday,omitempty" bson:"wednesday,omitempty"`
-	Thursday            bool   `json:"thursday,omitempty" bson:"thursday,omitempty"`
-	Friday              bool   `json:"friday,omitempty" bson:"friday,omitempty"`
-	Saturday            bool   `json:"saturday,omitempty" bson:"saturday,omitempty"`
-	Sunday              bool   `json:"sunday,omitempty" bson:"sunday,omitempty"`
+	Monday              bool   `json:"monday" bson:"monday"`
+	Tuesday             bool   `json:"tuesday" bson:"tuesday"`
+	Wednesday           bool   `json:"wednesday" bson:"wednesday"`
+	Thursday            bool   `json:"thursday" bson:"thursday"`
+	Friday              bool   `json:"friday" bson:"friday"`
+	Saturday            bool   `json:"saturday" bson:"saturday"`
+	Sunday              bool   `json:"sunday" bson:"sunday"`
 }

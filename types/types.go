@@ -39,6 +39,7 @@ type MeetingTime struct {
 	BuildingDescription string `json:"buildingDescription,omitempty" bson:"buildingDescription,omitempty"`
 	Room                string `json:"room,omitempty" bson:"room,omitempty"`
 	EndTime             string `json:"endTime,omitempty" bson:"endTime,omitempty"`
+	StartDate           string `json:"startDate,omitempty" bson:"startDate,omitempty"`
 	Monday              bool   `json:"monday" bson:"monday"`
 	Tuesday             bool   `json:"tuesday" bson:"tuesday"`
 	Wednesday           bool   `json:"wednesday" bson:"wednesday"`

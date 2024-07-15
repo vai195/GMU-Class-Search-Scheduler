@@ -5,7 +5,7 @@ import React from "react";
 
 function contactpage() {
   return (
-    <div className='flex flex-col items-center justify-center gap-5 p-4'>
+    <div className='flex flex-col items-center justify-center gap-5 p-4 bg-primary text-primary-foreground hover:bg-primary/90 rounded shadow-lg'>
       <h1 className='text-3xl font-extrabold transition-all'>Contact Me</h1>
       <p className='max-w-prose text-center'>
         Hi thank you for your intrest in contacting me!

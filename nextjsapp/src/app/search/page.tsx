@@ -1,7 +1,77 @@
-import React from "react";
+"use client";
+import { Button } from "@/components/ui/button";
+import Classrow, { classprops } from "@/components/ui/classrow";
+import { Input } from "@/components/ui/input";
+import {
+  Table,
+  TableBody,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
-function searchpage() {
-  return <div> searchpage</div>;
+import { FormEvent, useState } from "react";
+
+function Searchpage() {
+  const [search, setSearch] = useState("");
+  const [results, setResults] = useState<classprops[]>([]);
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const response = await fetch(
+      `https://gmu-class-search-scheduler-xxxdzxguea-uk.a.run.app/api/classes?search=${search}`,
+      { method: "GET" }
+    );
+    const json = await response.json();
+    if (!response.ok) {
+      console.log(json.error);
+    }
+    if (response.ok) {
+      setResults(json);
+      setSearch("");
+      console.log("search completed successfully");
+    }
+  };
+
+  return (
+    <div className='flex flex-col items-center justify-center gap-5 p-4'>
+      <div className='flex flex-col items-center justify-center gap-3'>
+        <h1 className='text-3xl font-extrabold'>Search All</h1>
+        <h1>Enter any course, crn, subject, instructor, etc</h1>
+        <form onSubmit={handleSubmit} className='flex gap-5'>
+          <Input
+            type='text'
+            placeholder='Ex: CS110, cs310'
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}></Input>
+          <Button type='submit'>Search</Button>
+        </form>
+      </div>
+
+      {results && results.length > 0 && <div>Search Results</div> && (
+        <Table className='bg-primary text-primary-foreground hover:bg-primary/90'>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Term</TableHead>
+              <TableHead>Course</TableHead>
+              <TableHead>Course Title</TableHead>
+              <TableHead>Instructor</TableHead>
+              <TableHead>Building/Room</TableHead>
+              <TableHead>Timing</TableHead>
+              <TableHead>Days</TableHead>
+              <TableHead>CRN</TableHead>
+              <TableHead>Add to Calender</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {results &&
+              results.map((item: classprops) => (
+                <Classrow course={item} key={item.id} />
+              ))}
+          </TableBody>
+        </Table>
+      )}
+    </div>
+  );
 }
 
-export default searchpage;
+export default Searchpage;

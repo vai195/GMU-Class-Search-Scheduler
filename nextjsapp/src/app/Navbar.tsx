@@ -3,6 +3,7 @@ import Link from "next/link";
 import logo from "../../public/GeorgeMasonUniversity4koCV.png";
 import { Button } from "@/components/ui/button";
 import { Book, Hash, Mail, Search } from "lucide-react";
+import Themetoggle from "@/components/themetoggle";
 
 function Navbar() {
   return (
@@ -32,8 +33,8 @@ function Navbar() {
               <Mail /> Contact Me
             </Link>
           </Button>
-        </div>{" "}
-        <div></div>
+          <Themetoggle />
+        </div>
       </div>
     </div>
   );

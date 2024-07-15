@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Classrow, { classprops } from "@/components/ui/classrow";
 import { Input } from "@/components/ui/input";
 import {
   Table,
@@ -13,7 +14,7 @@ import { FormEvent, useState } from "react";
 
 function Subjectcoursepage() {
   const [subject, setSubject] = useState("");
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState<classprops[]>([]);
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const response = await fetch(
@@ -46,22 +47,29 @@ function Subjectcoursepage() {
         </form>
       </div>
 
-      <div>Search Results</div>
-
-      <Table className='bg-background text-primary-foreground'>
-        <TableHeader>
-          <TableRow>
-            <TableHead>Term</TableHead>
-            <TableHead>Course</TableHead>
-            <TableHead>Course Title</TableHead>
-            <TableHead>Instructor</TableHead>
-            <TableHead>Building/Room</TableHead>
-            <TableHead>Timing</TableHead>
-            <TableHead>Days</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody></TableBody>
-      </Table>
+      {results && results.length > 0 && <div>Search Results</div> && (
+        <Table className='bg-primary text-primary-foreground hover:bg-primary/90'>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Term</TableHead>
+              <TableHead>Course</TableHead>
+              <TableHead>Course Title</TableHead>
+              <TableHead>Instructor</TableHead>
+              <TableHead>Building/Room</TableHead>
+              <TableHead>Timing</TableHead>
+              <TableHead>Days</TableHead>
+              <TableHead>CRN</TableHead>
+              <TableHead>Add to Calender</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {results &&
+              results.map((item: classprops) => (
+                <Classrow course={item} key={item.id} />
+              ))}
+          </TableBody>
+        </Table>
+      )}
     </div>
   );
 }

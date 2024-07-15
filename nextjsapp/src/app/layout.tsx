@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Navbar";
+import { ThemeProvider } from "./ThemeProvider";
+import ThemeClient from "./ThemeClient";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +21,10 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <Navbar />
-        <main className='p-4 max-w-7xl m-auto'>{children}</main>
+        <ThemeClient attribute='class'>
+          <Navbar />
+          <main className='p-4 max-w-7xl m-auto'>{children}</main>
+        </ThemeClient>
       </body>
     </html>
   );

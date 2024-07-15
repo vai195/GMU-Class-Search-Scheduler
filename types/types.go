@@ -5,6 +5,8 @@ import "context"
 type Store interface {
 	GetClassesDB(context.Context) ([]*Class, error)
 	SearchClassDB(context.Context, string) ([]*Class, error)
+	GetClassDBbyCRN(context.Context, string) ([]*Class, error)
+	GetClassDBbySubjectCourse(context.Context, string) ([]*Class, error)
 }
 
 type Class struct {

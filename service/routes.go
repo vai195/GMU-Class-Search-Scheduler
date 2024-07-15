@@ -2,18 +2,20 @@ package service
 
 import (
 	"fmt"
+
 	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/vai195/gogmuclassdb/types"
 	"github.com/vai195/gogmuclassdb/utils"
 )
 
 type Handler struct {
-	store *Store
+	store types.Store
 }
 
-func NewHandler(store *Store) *Handler {
+func NewHandler(store types.Store) *Handler {
 
 	return &Handler{
 		store: store,
@@ -31,6 +33,7 @@ func (h *Handler) RegisterRoutes(router *mux.Router) {
 func (h *Handler) handleClasses(w http.ResponseWriter, r *http.Request) {
 
 	search := r.URL.Query().Get("search")
+
 	if search != "" {
 		classes, err := h.store.SearchClassDB(r.Context(), search)
 

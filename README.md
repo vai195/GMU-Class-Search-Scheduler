@@ -16,3 +16,6 @@ This project is a robust class search system specifically tailored for George Ma
 ## Intuitive Search
 ![search](https://github.com/user-attachments/assets/acc41557-74d3-4713-afba-244319d08535)
 
+## Seamlessly Add Courses To Your Calendar
+
+

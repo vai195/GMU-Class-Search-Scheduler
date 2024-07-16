@@ -2,6 +2,10 @@
 
 This project is a robust class search system specifically tailored for George Mason University, catering to a student population of over 30,000. It employs a MongoDB database to manage class and scheduling data, a Go application to establish a RESTful API for the backend, and a Next.js frontend for user-friendly interaction.
 
+## Visit the app [Link!](https://gmuscheduler.vercel.app/)
+![home page](https://github.com/user-attachments/assets/25092a34-28f3-44bc-b299-d74354a4d722)
+
+
 # Features
 
 - MongoDB database: Stores information about classes including dates, times, courses, locations, professors, and more.

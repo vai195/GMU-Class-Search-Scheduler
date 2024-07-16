@@ -9,6 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Metadata } from "next";
 
 import { FormEvent, useState } from "react";
 
@@ -18,7 +19,7 @@ function Searchpage() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const response = await fetch(
-      `https://gmu-class-search-scheduler-xxxdzxguea-uk.a.run.app/api/classes?search=${search}`,
+      `${process.env.NEXT_PUBLIC_GCLOUD_URL}/api/classes?search=${search}`,
       { method: "GET" }
     );
     const json = await response.json();

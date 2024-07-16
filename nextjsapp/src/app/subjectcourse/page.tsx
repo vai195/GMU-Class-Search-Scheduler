@@ -10,6 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Metadata } from "next";
 import { FormEvent, useState } from "react";
 
 function Subjectcoursepage() {
@@ -17,8 +18,11 @@ function Subjectcoursepage() {
   const [results, setResults] = useState<classprops[]>([]);
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const response = await fetch(
-      `https://gmu-class-search-scheduler-xxxdzxguea-uk.a.run.app/api/subjectcourse/${subject.toUpperCase()}`,
+      `${
+        process.env.NEXT_PUBLIC_GCLOUD_URL
+      }/api/subjectcourse/${subject.toUpperCase()}`,
       { method: "GET" }
     );
     const json = await response.json();

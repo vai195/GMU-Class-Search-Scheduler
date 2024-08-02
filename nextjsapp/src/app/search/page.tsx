@@ -23,7 +23,9 @@ function Searchpage() {
     e.preventDefault();
     setLoading(true);
     const response = await fetch(
-      `${process.env.GCLOUD_URL}/api/classes?search=${search}`,
+      `${process.env.GCLOUD_URL}/api/classes?search=${encodeURIComponent(
+        search
+      )}`,
       { method: "GET" }
     );
     const json = await response.json();

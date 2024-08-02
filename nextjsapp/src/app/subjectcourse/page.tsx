@@ -20,9 +20,7 @@ function Subjectcoursepage() {
     e.preventDefault();
 
     const response = await fetch(
-      `${
-        process.env.NEXT_PUBLIC_GCLOUD_URL
-      }/api/subjectcourse/${subject.toUpperCase()}`,
+      `${process.env.GCLOUD_URL}/api/subjectcourse/${subject.toUpperCase()}`,
       { method: "GET" }
     );
     const json = await response.json();

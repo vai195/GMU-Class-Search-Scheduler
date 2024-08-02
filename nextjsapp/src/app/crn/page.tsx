@@ -18,10 +18,9 @@ function Crnpage() {
   const [results, setResults] = useState<classprops[]>([]);
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_GCLOUD_URL}/api/crn/${crn}`,
-      { method: "GET" }
-    );
+    const response = await fetch(`${process.env.GCLOUD_URL}/api/crn/${crn}`, {
+      method: "GET",
+    });
     const json = await response.json();
     if (!response.ok) {
       console.log(json.error);

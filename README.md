@@ -13,6 +13,12 @@ This project is a robust class search system specifically tailored for George Ma
 - Next.js Frontend: A user-friendly interface for viewing class information as well as adding class timings to your calendar. Deployed on Vercel.
 - CI/CD: Utilized Github Actions for continous integration by running a build of the application as well as router tests everytime a commit is pushed to the main branch which then allows for Google Cloud Run to deploy a new instance of my application everytime a code change is made.
 
+## Diagram of Whole Project and CI/CD
+Excalidraw: [Link](https://excalidraw.com/?#json=yJMPUJSUECawp_bK0OLZN,yfZ_cOS_YtuTDv2-zBOGRg)
+
+![Excalidraw](https://github.com/user-attachments/assets/c6aa798e-47c8-4549-affe-847aaf9e31f4)
+
+
 ## Intuitive Search
 ![search](https://github.com/user-attachments/assets/acc41557-74d3-4713-afba-244319d08535)
 

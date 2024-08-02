@@ -1,4 +1,5 @@
 "use client";
+import LoadingButton from "@/components/loading-button";
 import { Button } from "@/components/ui/button";
 import Classrow, { classprops } from "@/components/ui/classrow";
 import { Input } from "@/components/ui/input";
@@ -16,19 +17,24 @@ import { FormEvent, useState } from "react";
 function Crnpage() {
   const [crn, setCrn] = useState("");
   const [results, setResults] = useState<classprops[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string>("");
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
     const response = await fetch(`${process.env.GCLOUD_URL}/api/crn/${crn}`, {
       method: "GET",
     });
     const json = await response.json();
     if (!response.ok) {
-      console.log(json.error);
+      setError(json.error);
+      setLoading(false);
     }
     if (response.ok) {
+      setError("");
+      setLoading(false);
       setResults(json);
       setCrn("");
-      console.log("search completed successfully");
     }
   };
 
@@ -43,8 +49,15 @@ function Crnpage() {
             placeholder='Ex: 123456'
             onChange={(e) => setCrn(e.target.value)}
             value={crn}></Input>
-          <Button type='submit'>Search</Button>
+          <LoadingButton loading={loading} disabled={crn === ""} type='submit'>
+            Search
+          </LoadingButton>
         </form>
+        {error && (
+          <div className='text-red-500 border-red-500 border p-2 rounded bg-foreground'>
+            {error}
+          </div>
+        )}
       </div>
 
       {results && results.length > 0 && <div>Search Results</div> && (

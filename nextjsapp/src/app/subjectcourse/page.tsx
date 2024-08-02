@@ -1,5 +1,6 @@
 "use client";
 
+import LoadingButton from "@/components/loading-button";
 import { Button } from "@/components/ui/button";
 import Classrow, { classprops } from "@/components/ui/classrow";
 import { Input } from "@/components/ui/input";
@@ -16,21 +17,25 @@ import { FormEvent, useState } from "react";
 function Subjectcoursepage() {
   const [subject, setSubject] = useState("");
   const [results, setResults] = useState<classprops[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string>("");
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    setLoading(true);
     const response = await fetch(
       `${process.env.GCLOUD_URL}/api/subjectcourse/${subject.toUpperCase()}`,
       { method: "GET" }
     );
     const json = await response.json();
     if (!response.ok) {
-      console.log(json.error);
+      setError(json.error);
+      setLoading(false);
     }
     if (response.ok) {
+      setError("");
+      setLoading(false);
       setResults(json);
       setSubject("");
-      console.log("search completed successfully");
     }
   };
 
@@ -45,8 +50,18 @@ function Subjectcoursepage() {
             placeholder='Ex: CS110, cs310'
             onChange={(e) => setSubject(e.target.value)}
             value={subject}></Input>
-          <Button type='submit'>Search</Button>
+          <LoadingButton
+            loading={loading}
+            disabled={subject === ""}
+            type='submit'>
+            Search
+          </LoadingButton>
         </form>
+        {error && (
+          <div className='text-red-500 border-red-500 border p-2 rounded bg-foreground'>
+            {error}
+          </div>
+        )}
       </div>
 
       {results && results.length > 0 && <div>Search Results</div> && (

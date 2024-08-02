@@ -15,9 +15,11 @@ export default function Home() {
       </div>
       <p className='max-w-prose text-center '>
         Search for your courses and seemlessly add them to your calendar without
-        the need to login into patriot web. Currently only supporting CS courses
-        but will continuously add more subjects. Contact me for any issues or
-        inquires about the website.
+        the need to login into patriot web. Currently only supporting CS and SWE
+        courses but will continuously add more subjects . Contact me for any
+        issues or inquires about the website. (Subjects supported listed on
+        github, request me to add major specific courses not currenlty added or
+        update course information)
       </p>
       <Button size='lg' asChild className='gap-1'>
         <Link href='/search'>

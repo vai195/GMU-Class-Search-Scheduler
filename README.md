@@ -22,6 +22,10 @@ Excalidraw: [Link](https://excalidraw.com/?#json=yJMPUJSUECawp_bK0OLZN,yfZ_cOS_Y
 ## Intuitive Search
 ![search](https://github.com/user-attachments/assets/acc41557-74d3-4713-afba-244319d08535)
 
+## Subjects Supported
+- CS
+- SWE
+
 ## Seamlessly Add Courses To Your Calendar
 
 

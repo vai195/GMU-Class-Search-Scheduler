@@ -32,7 +32,7 @@ Excalidraw: [Link](https://excalidraw.com/?#json=yJMPUJSUECawp_bK0OLZN,yfZ_cOS_Y
 
 (Contact me to add your major specific classes or update your class info if wrong)
 ## Seamlessly Add Courses To Your Calendar
-<img src="https://github.com/user-attachments/assets/8b5fc29e-a9b1-4c3e-b95d-ef5729f9389d" width="200"/> <img src="https://github.com/user-attachments/assets/7d70ea34-c2bc-42eb-b71b-f316bf6bea38" width="630"/>
+<img src="https://github.com/user-attachments/assets/8b5fc29e-a9b1-4c3e-b95d-ef5729f9389d" width="150"/> <img src="https://github.com/user-attachments/assets/7d70ea34-c2bc-42eb-b71b-f316bf6bea38" width="680"/>
 
 
 

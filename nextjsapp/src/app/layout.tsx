@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import { ThemeProvider } from "./ThemeProvider";
 import ThemeClient from "./ThemeClient";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +25,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeClient attribute='class'>
           <Navbar />
-          <main className='p-4 max-w-7xl m-auto'>{children}</main>
+          <main className='p-4 max-w-7xl m-auto'>
+            {children}
+            <Analytics />
+          </main>
         </ThemeClient>
       </body>
       <GoogleAnalytics gaId='G-23FMT5J9HQ' />

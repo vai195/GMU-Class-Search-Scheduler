@@ -61,7 +61,7 @@ function Crnpage() {
       </div>
 
       {results && results.length > 0 && <div>Search Results</div> && (
-        <Table className='bg-primary text-primary-foreground hover:bg-primary/90'>
+        <Table className='rounded shadow-lg bg-primary text-primary-foreground hover:bg-primary/90'>
           <TableHeader>
             <TableRow>
               <TableHead>Term</TableHead>

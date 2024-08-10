@@ -1,6 +1,6 @@
 # George Mason University Class Search and Scheduler 
 
-This project is a robust class search system specifically tailored for George Mason University, catering to a student population of over 30,000. It employs a MongoDB database to manage class and scheduling data, a Go application to establish a RESTful API for the backend, and a Next.js frontend for user-friendly interaction.
+This project is a robust class search system specifically tailored for George Mason University, catering to a student population of over 30,000. It employs a MongoDB database to manage class and scheduling data, a Go application to establish a RESTful API for the backend, and a Next.js frontend for user-friendly interaction. Still working on the name.
 
 ## Visit the app [Link!](https://gmuscheduler.vercel.app/)
 ![home page](https://github.com/user-attachments/assets/25092a34-28f3-44bc-b299-d74354a4d722)
